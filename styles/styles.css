@@ -1,0 +1,26 @@
+.section-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  color: #ad0e0e;
+  margin-bottom: 1rem;
+}
+
+.footer-full {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.acc-btn[aria-expanded="true"] {
+  background-color: #ad0e0e !important;
+  color: #fff !important;
+}
+
+.acc-body {
+  border-left: 3px solid #ad0e0e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

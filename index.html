@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Porsche</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.css" />
+
+  <link rel="stylesheet" href="./styles/normalize.css" />
+  <link rel="stylesheet" href="./styles/styles.css" />
+</head>
+
+<body class="bg-white text-gray-900">
+  <header class="max-w-6xl mx-auto px-4 py-3">
+    <div class="flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="hidden lg:block text-2xl font-extrabold tracking-[0.28em]">PORSCHE</span>
+        <img src="./images/porsche_icon.png" alt="Porsche Logo" class="block lg:hidden" height="40" width="40" />
+      </div>
+
+      <nav class="w-auto">
+        <div class="flex items-center">
+          <button data-collapse-toggle="navbar-default" type="button"
+            class="inline-flex items-center justify-center rounded-lg p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 lg:hidden"
+            aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+          <div class="hidden w-full lg:block" id="navbar-default">
+            <ul
+              class="mt-4 flex flex-col gap-1 rounded-lg border border-gray-200 bg-white p-3 shadow-sm lg:mt-0 lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
+              <li>
+                <a href="#"
+                  class="block rounded px-2 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 lg:hover:bg-transparent lg:hover:underline">Головна</a>
+              </li>
+
+              <li class="relative">
+                <button id="dropdownCarsButton" data-dropdown-toggle="dropdownCars"
+                  class="flex w-full items-center justify-between gap-2 rounded px-2 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 lg:w-auto lg:hover:bg-transparent lg:hover:underline">
+                  Автомобілі
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </button>
+
+                <div id="dropdownCars" class="z-10 hidden w-44 rounded-lg border border-gray-200 bg-white shadow">
+                  <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownCarsButton">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">911</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Taycan</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Cayenne</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="relative">
+                <button id="dropdownBuyButton" data-dropdown-toggle="dropdownBuy"
+                  class="flex w-full items-center justify-between gap-2 rounded px-2 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 lg:w-auto lg:hover:bg-transparent lg:hover:underline">
+                  Придбання авто
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </button>
+
+                <div id="dropdownBuy" class="z-10 hidden w-56 rounded-lg border border-gray-200 bg-white shadow">
+                  <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownBuyButton">
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Конфігуратор</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Порівняти моделі</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Тест-драйв</a></li>
+                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Кредитування</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="#"
+                  class="block rounded px-2 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 lg:hover:bg-transparent lg:hover:underline">Контакти</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-12">
+      <section class="lg:col-span-3">
+        <h2 class="section-title mb-3">Новинки</h2>
+
+        <div id="porsche-carousel" class="relative w-full" data-carousel="slide">
+          <!-- ✅ вертикальний формат 720x1440 (1:2) + ✅ z-index fix без моргання -->
+          <div class="relative w-full overflow-hidden rounded-lg aspect-[1/2] bg-white">
+            <div class="absolute inset-0 z-20 duration-700 ease-in-out" data-carousel-item="active">
+              <img src="./images/porsche_slider1.png" class="absolute inset-0 h-full w-full object-contain"
+                alt="Porsche slide 1" />
+            </div>
+
+            <div class="hidden absolute inset-0 z-10 duration-700 ease-in-out" data-carousel-item>
+              <img src="./images/porsche_slider2.png" class="absolute inset-0 h-full w-full object-contain"
+                alt="Porsche slide 2" />
+            </div>
+
+            <div class="hidden absolute inset-0 z-10 duration-700 ease-in-out" data-carousel-item>
+              <img src="./images/porsche_slider3.png" class="absolute inset-0 h-full w-full object-contain"
+                alt="Porsche slide 3" />
+            </div>
+          </div>
+
+          <button type="button"
+            class="group absolute left-0 top-0 z-30 flex h-full items-center justify-center px-4 focus:outline-none"
+            data-carousel-prev>
+            <span
+              class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/50 group-hover:bg-white/70">
+              <svg class="h-4 w-4 text-gray-800" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 1L1 5L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span class="sr-only">Previous</span>
+            </span>
+          </button>
+
+          <button type="button"
+            class="group absolute right-0 top-0 z-30 flex h-full items-center justify-center px-4 focus:outline-none"
+            data-carousel-next>
+            <span
+              class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/50 group-hover:bg-white/70">
+              <svg class="h-4 w-4 text-gray-800" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 9L5 5L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span class="sr-only">Next</span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="lg:col-span-6">
+        <h2 class="section-title">Модельний ряд</h2>
+
+        <div id="accordion-porsche" data-accordion="collapse" class="mt-4">
+          <h3 id="accordion-heading-1">
+            <button type="button"
+              class="acc-btn flex w-full items-center justify-between rounded-t-lg border border-gray-800 bg-zinc-900 px-5 py-4 text-left font-semibold text-zinc-100 hover:bg-zinc-800"
+              data-accordion-target="#accordion-body-1" aria-expanded="true" aria-controls="accordion-body-1">
+              <span>911</span>
+              <svg data-accordion-icon class="h-3 w-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h3>
+          <div id="accordion-body-1" aria-labelledby="accordion-heading-1">
+            <div class="acc-body border border-t-0 border-gray-800 bg-zinc-800 px-5 py-4 text-zinc-200">
+              <strong>Дизайн поза часом.</strong> Непідвладний дизайн часу в сучасній інтерпретації.
+              Унікальний силует 911 характеризується легендарною лінією даху Flyline. Вона практично
+              не змінилася з 1963 року та є головною генетичною ознакою всіх моделей Porsche. Зокрема,
+              очевидно, і таких кузовних варіантів 911, як Cabriolet і Targa.
+            </div>
+          </div>
+
+          <h3 id="accordion-heading-2" class="mt-4">
+            <button type="button"
+              class="acc-btn flex w-full items-center justify-between rounded-lg border border-gray-800 bg-zinc-900 px-5 py-4 text-left font-semibold text-zinc-100 hover:bg-zinc-800"
+              data-accordion-target="#accordion-body-2" aria-expanded="false" aria-controls="accordion-body-2">
+              <span>Taycan</span>
+              <svg data-accordion-icon class="h-3 w-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h3>
+          <div id="accordion-body-2" class="hidden" aria-labelledby="accordion-heading-2">
+            <div class="acc-body border border-t-0 border-gray-800 bg-zinc-800 px-5 py-4 text-zinc-200">
+              <strong>Мрії — найсильніша мотивація.</strong>
+              З Taycan ми стали ще більше вірити в електромобілі й відкрили нову главу: Porsche E-Performance.
+            </div>
+          </div>
+
+          <h3 id="accordion-heading-3" class="mt-4">
+            <button type="button"
+              class="acc-btn flex w-full items-center justify-between rounded-lg border border-gray-800 bg-zinc-900 px-5 py-4 text-left font-semibold text-zinc-100 hover:bg-zinc-800"
+              data-accordion-target="#accordion-body-3" aria-expanded="false" aria-controls="accordion-body-3">
+              <span>Cayenne</span>
+              <svg data-accordion-icon class="h-3 w-3 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h3>
+          <div id="accordion-body-3" class="hidden" aria-labelledby="accordion-heading-3">
+            <div class="acc-body border border-t-0 border-gray-800 bg-zinc-800 px-5 py-4 text-zinc-200">
+              <strong>Разом у майбутнє.</strong> Втілюючи в собі типовий дизайн Porsche, Cayenne
+              підходить як для поїздок в офіс, так і для пересування бездоріжжям чи гоночним треком –
+              задоволення від поїздки гарантується за будь-яких умов.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lg:col-span-3">
+        <h2 class="section-title">Моделі в наявності</h2>
+
+        <div class="mb-4 flex flex-col items-center text-center">
+          <img src="./images/model_in-stock_911.png" class="mb-2 w-full max-w-xs rounded" alt="Porsche Model 911" />
+          <p class="mb-2 text-base font-semibold">911</p>
+          <button type="button"
+            class="rounded-lg bg-zinc-600 px-4 py-2 text-sm font-semibold text-white hover:bg-[#ad0e0e] focus:outline-none focus:ring-4 focus:ring-red-200">
+            Показати більше
+          </button>
+        </div>
+
+        <div class="mb-4 flex flex-col items-center text-center">
+          <img src="./images/model_in-stock_taycan.png" class="mb-2 w-full max-w-xs rounded"
+            alt="Porsche Model Taycan" />
+          <p class="mb-2 text-base font-semibold">Taycan</p>
+          <button type="button"
+            class="rounded-lg bg-zinc-600 px-4 py-2 text-sm font-semibold text-white hover:bg-[#ad0e0e] focus:outline-none focus:ring-4 focus:ring-red-200">
+            Показати більше
+          </button>
+        </div>
+
+        <div class="mb-4 flex flex-col items-center text-center">
+          <img src="./images/model_in-stock_cayenne.png" class="mb-2 w-full max-w-xs rounded"
+            alt="Porsche Model Cayenne" />
+          <p class="mb-2 text-base font-semibold">Cayenne</p>
+          <button type="button"
+            class="rounded-lg bg-zinc-600 px-4 py-2 text-sm font-semibold text-white hover:bg-[#ad0e0e] focus:outline-none focus:ring-4 focus:ring-red-200">
+            Показати більше
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer-full mt-10 bg-zinc-900 py-6 text-zinc-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h5 class="mb-2 text-base font-bold">Контакти</h5>
+            <p class="mb-1 text-sm">Телефон: +38 012 345 67 89</p>
+            <p class="text-sm">Email: info@porsche-example.com</p>
+          </div>
+          <div>
+            <h5 class="mb-2 text-base font-bold">Соцмережі</h5>
+            <div class="flex flex-wrap gap-3 text-sm">
+              <a href="#" class="underline-offset-4 hover:underline">Facebook</a>
+              <a href="#" class="underline-offset-4 hover:underline">Instagram</a>
+              <a href="#" class="underline-offset-4 hover:underline">Twitter</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm">&copy; 2025 Porsche Example. Всі права захищені.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+</body>
+
+</html>
